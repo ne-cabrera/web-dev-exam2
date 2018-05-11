@@ -3,7 +3,8 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
  
 import App from '../imports/ui/App';
+import MainContainer from "../imports/ui/MainContainer";
  
 Meteor.startup(() => {
-  render(<App />, document.getElementById('render-target'));
+  render(<MainContainer />, document.getElementById('render-target'));
 });

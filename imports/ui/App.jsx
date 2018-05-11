@@ -36,7 +36,6 @@ export default class App extends Component {
 		this.g.append("g")
 			.attr("class","stack");
 		setInterval(() =>{
-			console.log("aaaaaaaaaa");
 			Meteor.call("buses.getBuses", (err, res) =>{
 				if(err) throw err;
 				var nestedBuses = d3.nest().key((d) => d.routeTag).entries(res.vehicle);
@@ -73,7 +72,6 @@ export default class App extends Component {
 	}
 
 	update(nestedBuses, stackedBuses, keys, max, svg){
-		console.log("bbbbb");
 		this.x.domain(nestedBuses.map(function(d) { return d.key; }));
 		this.y.domain([0, d3.max(nestedBuses, function(d) { return d.total; })]).nice();
 		this.z.domain([0, max]);
@@ -154,15 +152,12 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<Accounts/>
 				<svg
 					width="1100"
 					height="800"
 					ref={(svg) => this.svg = svg}>
 				</svg>
-				<h1>Hola!</h1>				
 			</div>
-
 		);
 	}
 }
