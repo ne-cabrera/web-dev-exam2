@@ -45,7 +45,8 @@ $ meteor
 * [MongoDB](https://www.mongodb.com/es) - The databased used.
 ## Creativity
 For the creativity component of the app I added pagination and a rating with stars for the routes
-
+## Bug fix
+The goal of a visualization is to understand easily the data this was difficult beacause the stack was unordered
 ## Author
 
 * **Nicolás Cabrera** - [ne-cabrera](https://github.com/ne-cabrera)
