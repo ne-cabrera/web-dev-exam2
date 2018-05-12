@@ -47,6 +47,7 @@ export default class App extends Component {
 							+route.values[i].lat, +route.values[i].lon);
 	    		  route.total += route.values[i].distance;
 					}
+					route.values = route.values.sort((c, d) => c.distance - d.distance);
 				}
 				nestedBuses.sort(function(a, b) { return b.total - a.total; });
 				var max = 0;
