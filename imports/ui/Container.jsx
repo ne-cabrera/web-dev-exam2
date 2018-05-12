@@ -42,10 +42,11 @@ class Container extends Component {
 		console.log(this.props.comments[0]);
 		return (
 			<div className="row">
-				<div className="col-md-6">
+				<div className="col-md-8">
+					<h5>Routes</h5>
 					<RoutesList routes={this.state.routes} onItemClick={this.showRoute}/>
 				</div>
-				<div className="col-md-6">
+				<div className="col-md-4">
 					{this.state.title !== "" ? <RouteComents title={this.state.title} onKeyPress={this.addComment} comments={this.props.comments[0]}/> : <div></div>}		
 				</div>
 			</div>

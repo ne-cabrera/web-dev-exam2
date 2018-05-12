@@ -7,6 +7,11 @@ export default class MainContainer extends Component {
 	render() {
 		return (
 			<div className="container">
+				<div className="jumbotron">
+					<h1 className="title">
+						San Francisco Muni Bus Distances
+					</h1>
+				</div>
 				<div className="row">
 					<Accounts/>
 				</div>
@@ -15,6 +20,7 @@ export default class MainContainer extends Component {
 				</div>
 				<div className="row">
 					<Container/>
+
 				</div>
 			</div>
 		);

@@ -67,7 +67,7 @@ export default class App extends Component {
 
 				this.update(nestedBuses, stackedBuses, keys, max, svg);
 
-			
+
 			} );}, 10000);
 	}
 
@@ -127,7 +127,7 @@ export default class App extends Component {
 			.attr("y", 9.5)
 			.attr("dy", "0.32em")
 			.text(function(d) { return d; });
-
+		console.log("aaaaaaaaaaaaaaaaaa");
 		return svg.node();
 	}
 

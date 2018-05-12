@@ -25,7 +25,9 @@ Meteor.methods({
 			arr.push(newComment);
 			Comments.insert({
 				coms: arr,
-				title: pTitle
+				title: pTitle,
+				rating: 0,
+				num: 0
 			});
 		}
 		else{
@@ -35,7 +37,43 @@ Meteor.methods({
 			Comments.update( {title: pTitle}, 
 				{
 					coms: arr,
-					title: pTitle
+					title: pTitle,
+					rating: r[0].rating,
+					num: r[0].num
+				});
+		}
+	},
+	"comments.addRating"(pTitle, pRating){
+		if (! this.userId) {
+			throw new Meteor.Error("not-authorized");
+		}
+		var exists = Comments.find({title: pTitle}).fetch();
+		if(exists.length === 0){
+			let arr = [];
+			Comments.insert({
+				coms: arr,
+				title: pTitle,
+				rating: pRating,
+				num: 1
+			});
+		}
+		else{
+			var r = Comments.find({title: pTitle}).fetch();
+			let arr = r[0].coms;
+			let n = r[0].num;
+			let ra = r[0].rating;
+			console.log(n);
+			console.log(ra);
+			ra *= n;
+			ra += pRating;
+			n ++;
+			ra /= n;
+			Comments.update( {title: pTitle}, 
+				{
+					coms: arr,
+					title: pTitle,
+					rating: ra,
+					num: n
 				});
 		}
 	}

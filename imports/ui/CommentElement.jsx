@@ -5,10 +5,10 @@ export default class CommentElement extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-md-8">
+					<div className="col-md-6">
 						{this.props.userName}
 					</div>
-					<div className="col-md-4">
+					<div className="col-md-6">
 						{this.props.date.getDate() + "/" + this.props.date.getMonth()+1 + "/" + this.props.date.getFullYear() + " " + this.props.date.getHours() + ":" + this.props.date.getMinutes()}
 					</div>
 				</div>
